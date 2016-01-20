@@ -21,6 +21,7 @@
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
 
+ec2_role :worker
 
 
 # Configuration
@@ -41,11 +42,11 @@
 #
 # Global options
 # --------------
-#  set :ssh_options, {
-#    keys: %w(/home/rlisowski/.ssh/id_rsa),
-#    forward_agent: false,
-#    auth_methods: %w(password)
-#  }
+set :ssh_options, {
+  user: 'ubuntu',
+  keys: ['eb-worker-benchmark.pem'],
+  forward_agent: false,
+}
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
@@ -59,3 +60,5 @@
 #     auth_methods: %w(publickey password)
 #     # password: 'please use keys'
 #   }
+
+set :deploy_to, "/home/ubuntu/"

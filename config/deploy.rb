@@ -1,8 +1,8 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
-set :application, 'my_app_name'
-set :repo_url, 'git@example.com:me/my_repo.git'
+set :application, 'eb-worker-benchmark'
+set :repo_url, 'https://github.com/tawan/eb-worker-benchmark.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -33,6 +33,16 @@ set :repo_url, 'git@example.com:me/my_repo.git'
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
+
+set :ec2_project_tag, 'Project'
+set :ec2_roles_tag, 'Roles'
+set :ec2_stages_tag, 'Stages'
+
+set :ec2_contact_point, nil
+
+set :ec2_filter_by_status_ok?, nil
+
+set :pty, true
 
 namespace :deploy do
 

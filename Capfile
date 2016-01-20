@@ -1,3 +1,6 @@
+# Load AWS credentials from .env
+require 'dotenv'
+Dotenv.load
 # Load DSL and set up stages
 require 'capistrano/setup'
 
