@@ -44,6 +44,8 @@ set :ec2_filter_by_status_ok?, nil
 
 set :pty, true
 
+set :bundle_flags, '--with=production --quiet'
+
 namespace :deploy do
 
   after :restart, :clear_cache do
